@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Main View Controller-->
@@ -22,37 +23,17 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="322"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Xz-wg-xCh" userLabel="mainView">
-                                            <rect key="frame" x="8" y="14" width="444" height="300"/>
+                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Xz-wg-xCh" userLabel="mainView">
+                                            <rect key="frame" x="8" y="14" width="552" height="308"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wVb-sY-tor" userLabel="footerbg">
-                                                    <rect key="frame" x="0.0" y="271" width="444" height="29"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hX8-2t-wny" userLabel="cardbg">
+                                                    <rect key="frame" x="0.0" y="0.0" width="552" height="280"/>
                                                     <subviews>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Criado por: Casseb - Deck 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KnE-fx-ZVH" userLabel="webLabel">
-                                                            <rect key="frame" x="10" y="3" width="426" height="23"/>
-                                                            <animations/>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
-                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <animations/>
-                                                    <color key="backgroundColor" red="0.40392156862745099" green="0.80392156862745101" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
-                                                </view>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hX8-2t-wny" userLabel="cardbg">
-                                                    <rect key="frame" x="0.0" y="0.0" width="444" height="272"/>
-                                                    <subviews>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Objetivo: Texto do Objetivo" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="266" translatesAutoresizingMaskIntoConstraints="NO" id="zvZ-rn-4ea" userLabel="aboutLabel">
-                                                            <rect key="frame" x="8" y="74" width="436" height="173"/>
-                                                            <animations/>
-                                                            <fontDescription key="fontDescription" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="14"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d4e-yp-WUY" userLabel="namebg">
-                                                            <rect key="frame" x="0.0" y="0.0" width="444" height="67"/>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d4e-yp-WUY" userLabel="namebg">
+                                                            <rect key="frame" x="0.0" y="0.0" width="552" height="75"/>
                                                             <subviews>
-                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Matemática Discreta" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRq-hQ-k6h" userLabel="nameLabel">
-                                                                    <rect key="frame" x="10" y="10" width="426" height="47"/>
+                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Matemática Discreta" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRq-hQ-k6h" userLabel="nameLabel">
+                                                                    <rect key="frame" x="10" y="10" width="534" height="55"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -61,17 +42,77 @@
                                                             </subviews>
                                                             <animations/>
                                                             <color key="backgroundColor" red="0.46287986696812694" green="0.8229567307692307" blue="0.24336746899643266" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstItem="FRq-hQ-k6h" firstAttribute="top" secondItem="d4e-yp-WUY" secondAttribute="top" constant="10" id="5Bs-v5-ilp"/>
+                                                                <constraint firstItem="FRq-hQ-k6h" firstAttribute="centerY" secondItem="d4e-yp-WUY" secondAttribute="centerY" id="LNg-hP-dtu"/>
+                                                                <constraint firstItem="FRq-hQ-k6h" firstAttribute="trailing" secondItem="d4e-yp-WUY" secondAttribute="trailingMargin" id="dHk-Mv-ydN"/>
+                                                                <constraint firstItem="FRq-hQ-k6h" firstAttribute="leading" secondItem="d4e-yp-WUY" secondAttribute="leading" constant="10" id="lhb-l7-NxW"/>
+                                                            </constraints>
                                                         </view>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Objetivo: Texto do Objetivo" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="266" translatesAutoresizingMaskIntoConstraints="NO" id="zvZ-rn-4ea" userLabel="aboutLabel">
+                                                            <rect key="frame" x="8" y="75" width="536" height="189"/>
+                                                            <animations/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="173" id="nUM-sG-wAu"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="14"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <animations/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="d4e-yp-WUY" firstAttribute="top" secondItem="hX8-2t-wny" secondAttribute="top" id="7Lo-Te-H8R"/>
+                                                        <constraint firstAttribute="trailing" secondItem="d4e-yp-WUY" secondAttribute="trailing" id="OBq-6I-xTD"/>
+                                                        <constraint firstAttribute="bottom" secondItem="zvZ-rn-4ea" secondAttribute="bottom" constant="25" id="Uys-Yr-ecm"/>
+                                                        <constraint firstItem="d4e-yp-WUY" firstAttribute="centerX" secondItem="zvZ-rn-4ea" secondAttribute="centerX" id="X2N-fH-CyK"/>
+                                                        <constraint firstItem="zvZ-rn-4ea" firstAttribute="leading" secondItem="hX8-2t-wny" secondAttribute="leadingMargin" id="atf-Vx-CtV"/>
+                                                        <constraint firstItem="zvZ-rn-4ea" firstAttribute="top" secondItem="d4e-yp-WUY" secondAttribute="bottom" constant="7" id="b5e-Tm-zXE"/>
+                                                        <constraint firstItem="d4e-yp-WUY" firstAttribute="leading" secondItem="hX8-2t-wny" secondAttribute="leading" id="fSx-Cu-gPU"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wVb-sY-tor" userLabel="footerbg">
+                                                    <rect key="frame" x="0.0" y="266" width="552" height="29"/>
+                                                    <subviews>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Criado por: Casseb - Deck 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KnE-fx-ZVH" userLabel="webLabel">
+                                                            <rect key="frame" x="10" y="3" width="534" height="23"/>
+                                                            <animations/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <animations/>
+                                                    <color key="backgroundColor" red="0.40392156862745099" green="0.80392156862745101" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="KnE-fx-ZVH" firstAttribute="leading" secondItem="wVb-sY-tor" secondAttribute="leading" constant="10" id="6cy-MY-Ed7"/>
+                                                        <constraint firstItem="KnE-fx-ZVH" firstAttribute="trailing" secondItem="wVb-sY-tor" secondAttribute="trailingMargin" id="HZU-hN-kxW"/>
+                                                        <constraint firstItem="KnE-fx-ZVH" firstAttribute="centerY" secondItem="wVb-sY-tor" secondAttribute="centerY" id="nS5-xf-7K6"/>
+                                                        <constraint firstItem="KnE-fx-ZVH" firstAttribute="top" secondItem="wVb-sY-tor" secondAttribute="top" constant="3" id="x8p-7n-SpW"/>
+                                                    </constraints>
                                                 </view>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="hX8-2t-wny" firstAttribute="top" secondItem="8Xz-wg-xCh" secondAttribute="top" id="89B-96-M9d"/>
+                                                <constraint firstItem="wVb-sY-tor" firstAttribute="leading" secondItem="hX8-2t-wny" secondAttribute="leading" id="CsO-C2-GQv"/>
+                                                <constraint firstItem="wVb-sY-tor" firstAttribute="top" secondItem="8Xz-wg-xCh" secondAttribute="top" constant="271" id="Lss-fk-2FI"/>
+                                                <constraint firstItem="wVb-sY-tor" firstAttribute="leading" secondItem="8Xz-wg-xCh" secondAttribute="leading" id="Vo6-M4-Bbg"/>
+                                                <constraint firstAttribute="bottom" secondItem="wVb-sY-tor" secondAttribute="bottom" id="fhC-Hu-MZm"/>
+                                                <constraint firstItem="wVb-sY-tor" firstAttribute="trailing" secondItem="hX8-2t-wny" secondAttribute="trailing" id="kpE-NX-PW1"/>
+                                                <constraint firstAttribute="bottom" secondItem="hX8-2t-wny" secondAttribute="bottom" constant="20" id="yTb-vO-DNz" userLabel="bottom = cardbg.bottom"/>
+                                                <constraint firstAttribute="trailing" secondItem="hX8-2t-wny" secondAttribute="trailing" id="zrx-am-JPc"/>
+                                            </constraints>
                                         </view>
                                     </subviews>
                                     <animations/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="8Xz-wg-xCh" firstAttribute="leading" secondItem="Lrs-vI-3dM" secondAttribute="leadingMargin" id="1WS-2q-vub" userLabel="mainView.leading = leadingMargin-10"/>
+                                        <constraint firstItem="8Xz-wg-xCh" firstAttribute="top" secondItem="Lrs-vI-3dM" secondAttribute="topMargin" constant="6" id="YXm-fD-Efl" userLabel="mainView.top = topMargin + 20"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="8Xz-wg-xCh" secondAttribute="trailing" constant="32" id="bEy-sL-4dk"/>
+                                        <constraint firstItem="8Xz-wg-xCh" firstAttribute="bottom" secondItem="Lrs-vI-3dM" secondAttribute="bottomMargin" id="fg5-SL-3Ig"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
