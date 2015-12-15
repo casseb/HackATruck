@@ -10,7 +10,7 @@
         <scene sceneID="klK-Yl-0R2">
             <objects>
                 <tableViewController id="koX-Ma-yge" customClass="MainViewController" customModule="CardTilt" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="322" sectionHeaderHeight="22" sectionFooterHeight="22" id="Qye-3k-oTe">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="322" sectionHeaderHeight="22" sectionFooterHeight="22" id="Qye-3k-oTe">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>

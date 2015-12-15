@@ -59,14 +59,13 @@ class CardTableViewCell: UITableViewCell {
         
         
     }
+    
+    
     func swipeGesture(sender:UISwipeGestureRecognizer) {
         
         if sender.direction == .Down {
             TipInCellAnimator.animate(self)
-            aboutLabel.hidden = false
-            titleLabel.hidden = true
-            locationLabel.hidden = true
-            profilePictureView.hidden = true
+            aboutLabel.hidden = true
             
             namePanel.hidden = true
             nameLabel.hidden = true
