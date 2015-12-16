@@ -13,6 +13,8 @@ import QuartzCore
 
 class CardTableViewCell: UITableViewCell {
     
+    var alternar = true
+    
     @IBOutlet var mainView: UIView!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var titleLabel: UILabel!
@@ -25,7 +27,7 @@ class CardTableViewCell: UITableViewCell {
     @IBOutlet var twitterImage: UIImageView!
     @IBOutlet var facebookButton: UIButton!
     @IBOutlet var facebookImage: UIImageView!
-    
+    @IBOutlet weak var footerbg: UIView!
     @IBOutlet var namePanel: UIView!
     
     var twitter:String?
@@ -60,16 +62,29 @@ class CardTableViewCell: UITableViewCell {
         
     }
     
+
     
     func swipeGesture(sender:UISwipeGestureRecognizer) {
         
         if sender.direction == .Down {
-            TipInCellAnimator.animate(self)
-            aboutLabel.hidden = true
             
-            namePanel.hidden = true
-            nameLabel.hidden = true
-            
+            if alternar == true{
+                TipInCellAnimator.animate(self)
+                aboutLabel.hidden = true
+                namePanel.hidden = true
+                nameLabel.hidden = true
+                webLabel.hidden = true
+                footerbg.hidden = true
+                alternar = false
+            }else{
+                TipInCellAnimator.animate(self)
+                aboutLabel.hidden = false
+                namePanel.hidden = false
+                nameLabel.hidden = false
+                webLabel.hidden = false
+                footerbg.hidden = false
+                alternar = true
+            }
         }
     }
     
