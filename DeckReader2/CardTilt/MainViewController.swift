@@ -13,6 +13,7 @@ import UIKit
 class MainViewController: UITableViewController {
     var members: [Member] = []
     var currentIndexMember: Int = 0
+    var currentCell : UITableViewCell!
     
     // Mark: - Model
     
@@ -59,6 +60,12 @@ class MainViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Card", forIndexPath: indexPath) as! CardTableViewCell
         let member = members[currentIndexMember]
         cell.useMember(member)
+        cell.aboutLabel.hidden = false
+        cell.namePanel.hidden = false
+        cell.nameLabel.hidden = false
+        cell.alternar = true
+        cell.conteudo.hidden = true
+        cell.conteudo.text = ""
         return cell
     }
     
@@ -71,7 +78,7 @@ class MainViewController: UITableViewController {
         forRowAtIndexPath indexPath: NSIndexPath) {
             
             //   TipInCellAnimator.animate(cell)
-            
+
             TipInCellAnimator.animateWithRotation(cell)
             
             //animation with stored property
@@ -95,7 +102,6 @@ class MainViewController: UITableViewController {
             if currentIndexMember > members.count - 1{
                 currentIndexMember = 0
             }
-            
             self.tableView.reloadData()
             
         } else if sender.direction == .Right {
@@ -103,9 +109,10 @@ class MainViewController: UITableViewController {
             if currentIndexMember < 0 {
                 currentIndexMember = members.count - 1
             }
-            self.tableView.reloadData()
+           self.tableView.reloadData()
             
         }
+        
     }
     
 }

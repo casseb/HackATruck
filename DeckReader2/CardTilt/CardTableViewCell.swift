@@ -27,8 +27,8 @@ class CardTableViewCell: UITableViewCell {
     @IBOutlet var twitterImage: UIImageView!
     @IBOutlet var facebookButton: UIButton!
     @IBOutlet var facebookImage: UIImageView!
-    @IBOutlet weak var footerbg: UIView!
     @IBOutlet var namePanel: UIView!
+    @IBOutlet weak var conteudo: UILabel!
     
     var twitter:String?
     var facebook:String?
@@ -58,6 +58,13 @@ class CardTableViewCell: UITableViewCell {
         self.addGestureRecognizer(aSwipeGesture)
        // mainView.addGestureRecognizer(aSwipeGesture)
         
+        //Swipe movement animation
+        let aSwipeGesture2 = UISwipeGestureRecognizer(target:self, action:"swipeGesture:")
+        aSwipeGesture2.direction = .Up
+        self.addGestureRecognizer(aSwipeGesture2)
+        // mainView.addGestureRecognizer(aSwipeGesture)
+
+        
         
         
     }
@@ -66,24 +73,26 @@ class CardTableViewCell: UITableViewCell {
     
     func swipeGesture(sender:UISwipeGestureRecognizer) {
         
-        if sender.direction == .Down {
+        let conteudoText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas turpis ex, porta non fringilla sit amet, egestas in est. Quisque eget sem ut eros auctor tempus id ut orci. Maecenas faucibus vehicula arcu, vitae dictum metus sodales lacinia. Etiam ultricies posuere ipsum in malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut cursus, augue tempus vulputate posuere, lorem arcu rhoncus nisl, eget congue quam massa non orci. Fusce sed odio ante. Cras a sapien ut nunc bibendum imperdiet. Ut semper feugiat ligula, ac tempor elit auctor id. Mauris semper sodales mi at molestie. Pellentesque lacinia mi vel massa finibus, ac ultricies justo vehicula. Cras tortor eros, gravida ac vulputate sed, pellentesque luctus quam. Nullam tincidunt fermentum vehicula."
+        
+        if (sender.direction == .Down || sender.direction == .Up) {
             
             if alternar == true{
-                TipInCellAnimator.animate(self)
+                TipInCellAnimator.animateWithFlip(self)
                 aboutLabel.hidden = true
                 namePanel.hidden = true
                 nameLabel.hidden = true
-                webLabel.hidden = true
-                footerbg.hidden = true
                 alternar = false
+                conteudo.hidden = false
+                conteudo.text = conteudoText
             }else{
-                TipInCellAnimator.animate(self)
+                TipInCellAnimator.animateWithFlip(self)
                 aboutLabel.hidden = false
                 namePanel.hidden = false
                 nameLabel.hidden = false
-                webLabel.hidden = false
-                footerbg.hidden = false
                 alternar = true
+                conteudo.hidden = true
+                conteudo.text = ""
             }
         }
     }

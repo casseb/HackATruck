@@ -35,9 +35,10 @@ class TipInCellAnimator {
     
     class func animateWithRotation(cell:UITableViewCell) {
         let view = cell.contentView
-        let rotationDegrees: CGFloat = -15.0
+        let rotationDegrees: CGFloat = 0
         let rotationRadians: CGFloat = rotationDegrees * (CGFloat(M_PI)/180.0)
-        let offset = CGPointMake(-20, -20)
+        //let offset = CGPointMake(-20, -20)
+        let offset = CGPointMake(720, 0)
         var startTransform = CATransform3DIdentity // 2
         startTransform = CATransform3DRotate(CATransform3DIdentity,
             rotationRadians, 0.0, 0.0, 1.0) // 3
@@ -45,7 +46,48 @@ class TipInCellAnimator {
         
         // 5
         view.layer.transform = startTransform
-        view.layer.opacity = 0.8
+        view.layer.opacity = 0.1
+        
+        // 6
+        UIView.animateWithDuration(1) {
+            view.layer.transform = CATransform3DIdentity
+            view.layer.opacity = 1
+        }
+    }
+    
+    class func animateWithFlip(cell:UITableViewCell) {
+        let view = cell.contentView
+        //let rotationDegrees: CGFloat = 150
+        //let rotationRadians: CGFloat = rotationDegrees * (CGFloat(M_PI)/180.0)
+        //let offset = CGPointMake(-20, -20)
+        //let offset = CGPointMake(0,0)
+        var startTransform = CATransform3DIdentity // 2
+        startTransform = CATransform3DScale(CATransform3DMakeRotation(0, 0, 0, 0),
+            1, -1, 1) // 3
+        //startTransform = CATransform3DTranslate(startTransform, offset.x, offset.y, 0.0) // 4
+        
+        // 5
+        view.layer.transform = startTransform
+        //view.layer.opacity = 0.8
+        
+        // 6
+        UIView.animateWithDuration(0.4) {
+            view.layer.transform = CATransform3DIdentity
+            view.layer.opacity = 1
+        }
+    }
+    
+    class func animateForLeft(cell:UITableViewCell) {
+        let view = cell.contentView
+        //let rotationDegrees: CGFloat = 150
+        //let rotationRadians: CGFloat = rotationDegrees * (CGFloat(M_PI)/180.0)
+        let offset = CGPointMake(0, -20)
+        //let offset = CGPointMake(0,0)
+        var startTransform = CATransform3DIdentity
+        startTransform = CATransform3DTranslate(startTransform, offset.x, offset.y, 0.0) // 4
+        
+        // 5
+        //view.layer.opacity = 0.8
         
         // 6
         UIView.animateWithDuration(0.4) {
